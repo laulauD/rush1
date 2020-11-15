@@ -1,117 +1,118 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="en" dir="ltr">
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-      <!-- <i class="fas fa-align-justify"></i> -->
-    <link rel="stylesheet" href="my_style.css" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300&family=Raleway&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="https://newsroom.ionis-group.com/wp-content/uploads/2018/12/epitech-logo-signature-quadri.png" />
-    <title>My first form</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <!-- <i class="fas fa-align-justify"></i> -->
+  <link rel="stylesheet" href="my_style.css" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300&family=Raleway&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="https://newsroom.ionis-group.com/wp-content/uploads/2018/12/epitech-logo-signature-quadri.png" />
 
-  <body>
+  <title>My first form</title>
 
-    <div id="contact_form">
+</head>
 
-      <form name="formulaire" id="fo" method="POST" action="my_form.html">
-
-        <h1>My fist form</h1>
-        <fieldset>
-          <legend class="blue"> <label>Sexe :</label></legend>
-          <div>
-            <p>Homme :</p>
-            <input type="radio" id="homme" name="sexe" value="Homme" checked>
-          </div>
-
-          <div>
-
-            <p>Femme :</p>
-            <input type="radio" id="femme" name="sexe" value="Femme">
-          </div>
-
-          <div>
-            <p>Autre :</p>
-            <input type="radio" id="autre" name="sexe" value="Autre">
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>   <label for="civilite">Civilité :</label></legend>
-          <select name="civil" id="civilite">
-            <option value="M.">M.</option>
-            <option value="Mme.">Mme.</option>
-          </select>
-        </fieldset>
-
-        <fieldset>
-
-          <legend> 			<label for="nom">Nom :</label></legend>
-          <input type="text" name="nom" id="nom" placeholder="Votre nom"  minlength="2" required>
-        </fieldset>
-        <fieldset>
-          <legend class="blue"><label for="email">Email :</label></legend>
-          <input type="email" name="email" id="email" placeholder="Votre email" required>
-        </fieldset>
-        <fieldset>
-          <legend>  <label for="phone">Téléphone :</label></legend>
-          <input type="tel" name="telephone" id="phone"  pattern="[0-9]{10}" placeholder="Votre numéro de téléphone" required>
-        </fieldset>
-        <fieldset>
-          <legend>	<label for="url">Website :</label></legend>
-          <input type="url" name="website" id="url" placeholder="https://example.com" pattern="https://.*" required>
-        </fieldset>
-        <fieldset>
-          <legend class="blue">	<label for="date">Date de naissance :</label></legend>
-          <input type="date" name="date de naissance" id="phone" placeholder="Votre numéro de téléphone" required>
-        </fieldset>
-        <fieldset>
-          <legend>  <label>Hobbies :</label></legend>
-
-          <div>
-            <label for="jvid">Jeux vidéo</label>
-            <input type="checkbox" id="jvid" name="hobbies">
-
-          </div>
-
-          <div>
-            <label for="cinema">Cinéma</label>
-            <input type="checkbox" id="cinema" name="hobbies">
-
-          </div>
-
-          <div>
-            <label for="lecture">Lecture</label>
-            <input type="checkbox" id="lecture" name="hobbies">
-
-          </div>
-
-          <div>
-            <label for="sport">Sport</label>
-            <input type="checkbox" id="sport" name="hobbies">
-
-          </div>
-
-          <div>
-            <label for="informatique">Informatique</label>
-            <input type="checkbox" id="informatique" name="hobbies">
-
-          </div>
-
-          <label for="token"></label>
-          <input id="token" name="token" type="hidden" value="my firt website">
-
-          <label for="validation"></label>
-          <input type="submit" name="validation" id="sub" value="Envoyer !"required>
-        </form>
-      </div>
+<body>
+  <div id="contact_form">
+    <h1>My fist form</h1>
 
 
-      <!-- D'abord le CDN de JQuery -->
-      <!-- Puis le CDN du Popper.js -->
-      <!-- Sweet alert 2 (bouton ENVOYER)-->
-      <!-- Lien avec la page JS (toujours après les CDN de JQuery/AngularJs) -->
-    </body>
+    <p class="error" id="erreur"></p>
+    <form name="formulaire" id="fo" method="POST" action="my_form.html" onsubmit="return valider()">
+
+
+      <fieldset class="blue">
+        <legend><label>Sexe :</label></legend>
+        <div>
+          <p>Homme :</p>
+          <input type="radio" id="homme" name="sexe" value="Homme" checked>
+        </div>
+
+        <div>
+          <p>Femme :</p>
+          <input type="radio" id="femme" name="sexe" value="Femme">
+        </div>
+
+        <div>
+          <p>Autre :</p>
+          <input type="radio" id="autre" name="sexe" value="Autre">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><label for="civilite">Civilité :</label></legend>
+        <select name="civil" id="civilite">
+          <option value="M.">M.</option>
+          <option value="Mme.">Mme.</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+
+        <legend><label for="nom">Nom :</label></legend>
+        <input type="text" name="nom" id="nom" placeholder="Votre nom"  minlength="2">
+      </fieldset>
+
+      <fieldset>
+        <legend><label for="email">Email :</label></legend>
+        <input class="blue" type="email" name="email" id="email" placeholder="Votre email">
+      </fieldset>
+
+      <fieldset>
+        <legend><label for="phone">Téléphone :</label></legend>
+        <input type="tel" name="telephone" id="phone"  pattern="[0-9]{10}" placeholder="Votre numéro de téléphone">
+      </fieldset>
+
+      <fieldset>
+        <legend><label for="url">Website :</label></legend>
+        <input type="url" name="website" id="url" placeholder="https://example.com" pattern="https://.*">
+      </fieldset>
+
+      <fieldset>
+        <legend><label for="date">Date de naissance :</label></legend>
+        <input class="blue" type="date" name="date" id="date">
+      </fieldset>
+
+      <fieldset>
+        <legend><label>Hobbies :</label></legend>
+        <div>
+          <p>Jeux vidéo :</p>
+          <input type="checkbox" id="jvid" name="hobbies">
+        </div>
+
+        <div>
+          <p>Cinéma :</p>
+          <input type="checkbox" id="cinema" name="hobbies">
+        </div>
+
+        <div>
+          <p>Lecture :</p>
+          <input type="checkbox" id="lecture" name="hobbies">
+        </div>
+
+        <div>
+          <p>Sport :</p>
+          <input type="checkbox" id="sport" name="hobbies">
+        </div>
+
+        <div>
+          <p>Informatique :</p>
+          <input type="checkbox" id="informatique" name="hobbies">
+        </div>
+
+      </fieldset>
+
+      <input id="token" name="token" type="hidden" value="my first website">
+
+      <label for="validation"></label>
+      <input type="submit" name="validation" id="validation" value="Envoyer !">
+
+    </form>
+
+  </div>
+
+  <script src="my_script.js"></script>
+</body>
 
 </html>
